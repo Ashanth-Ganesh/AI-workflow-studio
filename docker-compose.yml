@@ -1,0 +1,54 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: ai_studio
+      POSTGRES_USER: ai_studio
+      POSTGRES_PASSWORD: ai_studio
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ai_studio -d ai_studio"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgresql+asyncpg://ai_studio:ai_studio@db:5432/ai_studio
+      APP_URL: http://localhost:5173
+      API_URL: http://localhost:8000
+      CORS_ORIGINS: http://localhost:5173
+    command: ["sh", "-c", "alembic -c apps/api/alembic.ini upgrade head && uvicorn --app-dir apps/api/src ai_workflow_studio.main:app --host 0.0.0.0 --port 8000 --reload"]
+    volumes:
+      - ./apps/api:/workspace/apps/api
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    environment:
+      VITE_API_PROXY_TARGET: http://api:8000
+    volumes:
+      - ./apps/web/src:/workspace/apps/web/src
+      - ./apps/web/public:/workspace/apps/web/public
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:
