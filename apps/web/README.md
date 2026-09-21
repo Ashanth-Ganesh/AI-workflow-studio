@@ -1,6 +1,6 @@
 # AI Workflow Studio web app
 
-This is the React, TypeScript, and Vite frontend for AI Workflow Studio.
+This is the React, TypeScript, Material UI, and Vite frontend for AI Workflow Studio.
 
 ## Local development
 
@@ -39,6 +39,10 @@ npm run preview  # Serve the production build locally
 - Provider-based sign-in for GitHub, Google, and Microsoft when configured
 - Session-aware authentication state and sign-out
 - A minimal authenticated dashboard placeholder for the future workflow editor
+
+Material UI supplies the theme, baseline CSS, authentication controls, alerts,
+loading state, app bar, avatar, and buttons. Product-specific layout and the
+workflow-preview illustration remain lightweight CSS.
 
 Authentication is cookie-based. The frontend must not store provider tokens,
 application tokens, or cloud credentials in browser storage.

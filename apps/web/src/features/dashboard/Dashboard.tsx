@@ -1,23 +1,60 @@
+import AccountTreeOutlinedIcon from '@mui/icons-material/AccountTreeOutlined'
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined'
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Button,
+  Stack,
+  Toolbar,
+  Typography,
+} from '@mui/material'
 import type { User } from '../../lib/api'
 
 type DashboardProps = { user: User; onLogout: () => Promise<void> }
 
 export function Dashboard({ user, onLogout }: DashboardProps) {
+  const fallbackInitial = user.display_name.trim().charAt(0).toUpperCase() || '?'
+
   return (
-    <main className="dashboard-shell">
-      <header className="dashboard-header">
-        <div className="dashboard-brand">AI Workflow Studio</div>
-        <div className="user-menu">
-          {user.avatar_url ? <img src={user.avatar_url} alt="" /> : <span>{user.display_name[0]}</span>}
-          <div><strong>{user.display_name}</strong></div>
-          <button type="button" onClick={() => void onLogout()}>Sign out</button>
-        </div>
-      </header>
-      <section className="dashboard-empty">
-        <p className="eyebrow">Authenticated workspace</p>
-        <h1>Welcome, {user.display_name.split(' ')[0]}.</h1>
-        <p>Your visual workflow dashboard will live here.</p>
-      </section>
-    </main>
+    <Box className="dashboard-shell">
+      <AppBar
+        color="transparent"
+        elevation={0}
+        position="static"
+        sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor: 'background.paper' }}
+      >
+        <Toolbar sx={{ minHeight: '76px !important', px: { xs: 2.25, md: '5vw' } }}>
+          <Stack direction="row" spacing={1} sx={{ alignItems: 'center', color: 'primary.dark' }}>
+            <AccountTreeOutlinedIcon />
+            <Typography sx={{ fontWeight: 700 }}>AI Workflow Studio</Typography>
+          </Stack>
+          <Box sx={{ flexGrow: 1 }} />
+          <Stack direction="row" spacing={{ xs: 1, sm: 1.5 }} sx={{ alignItems: 'center' }}>
+            <Avatar alt="" src={user.avatar_url ?? undefined} sx={{ bgcolor: '#dff2e8', color: '#245b4c' }}>
+              {fallbackInitial}
+            </Avatar>
+            <Typography sx={{ display: { xs: 'none', sm: 'block' }, fontSize: '1rem', fontWeight: 600 }}>
+              {user.display_name}
+            </Typography>
+            <Button
+              onClick={() => void onLogout()}
+              size="small"
+              startIcon={<LogoutOutlinedIcon />}
+              variant="outlined"
+            >
+              Sign out
+            </Button>
+          </Stack>
+        </Toolbar>
+      </AppBar>
+      <Box className="dashboard-empty">
+        <Typography className="eyebrow">Authenticated workspace</Typography>
+        <Typography component="h1" variant="h2">Welcome, {user.display_name.split(' ')[0]}.</Typography>
+        <Typography color="text.secondary" sx={{ mt: 1.5 }}>
+          Your visual workflow dashboard will live here.
+        </Typography>
+      </Box>
+    </Box>
   )
 }

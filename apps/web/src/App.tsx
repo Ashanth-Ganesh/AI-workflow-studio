@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Box, CircularProgress, Stack, Typography } from '@mui/material'
 import { AuthPage } from './features/auth/AuthPage'
 import { Dashboard } from './features/dashboard/Dashboard'
 import {
@@ -46,7 +47,16 @@ function App() {
     }
   }
 
-  if (loading) return <div className="loading-screen"><span className="loader" /><p>Opening your workspace…</p></div>
+  if (loading) {
+    return (
+      <Box className="loading-screen">
+        <Stack spacing={2} sx={{ alignItems: 'center' }}>
+          <CircularProgress aria-label="Loading application" size={32} />
+          <Typography color="text.secondary">Opening your workspace…</Typography>
+        </Stack>
+      </Box>
+    )
+  }
   if (user) return <Dashboard user={user} onLogout={handleLogout} />
   return <AuthPage providers={providers} error={error} onContinue={(provider: ProviderName) => beginOAuth(provider)} />
 }

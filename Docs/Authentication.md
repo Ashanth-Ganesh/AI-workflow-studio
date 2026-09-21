@@ -29,7 +29,7 @@ API process while it retrieves an identity profile.
 
 | Component | Responsibility |
 | --- | --- |
-| React web app | Displays available providers, starts browser redirects, reads the non-HttpOnly CSRF cookie only for state-changing API calls, and renders the authenticated user. |
+| React + Material UI web app | Displays available providers, starts browser redirects, reads the non-HttpOnly CSRF cookie only for state-changing API calls, and renders the authenticated user. |
 | FastAPI auth router | Provides provider discovery, OAuth start/callback, session lookup, and sign-out endpoints. |
 | Authentication service | Creates and validates OAuth attempts, resolves identities, creates sessions, and restricts post-login redirects. |
 | Provider registry | Defines OAuth/OIDC endpoints, scopes, token exchange, and profile normalization for GitHub, Google, and Microsoft. |

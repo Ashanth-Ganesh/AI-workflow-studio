@@ -17,7 +17,7 @@
 The project is currently a **local-only authentication foundation**, not yet a
 workflow editor or a deployed service. The implemented stack consists of:
 
-- React, TypeScript, and Vite frontend with sign-in and an authenticated
+- React, TypeScript, Material UI, and Vite frontend with sign-in and an authenticated
   dashboard placeholder
 - Async FastAPI modular monolith in `apps/api/src/ai_workflow_studio`
 - PostgreSQL 17 in Docker Compose, managed through Alembic migrations
@@ -215,12 +215,12 @@ agent orchestration should come later.
 -   React
 -   TypeScript
 -   Vite
+-   Material UI (MUI)
 
 **Planned additions when the workflow editor requires them:**
 
 -   React Flow (or the current `@xyflow/react` package)
 -   React Router
--   Material UI (MUI)
 -   TanStack Query for server state
 -   Zustand or equivalent lightweight store for complex editor/client
     state where appropriate

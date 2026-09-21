@@ -1,6 +1,6 @@
 # AI Workflow Studio
 
-AI Workflow Studio is a cloud-agnostic visual platform for designing and testing AI workflows. This initial vertical slice provides an async FastAPI API, PostgreSQL persistence, OAuth/OIDC login, opaque server-side sessions, and a responsive React authentication UI.
+AI Workflow Studio is a cloud-agnostic visual platform for designing and testing AI workflows. This initial vertical slice provides an async FastAPI API, PostgreSQL persistence, OAuth/OIDC login, opaque server-side sessions, and a responsive React + Material UI authentication UI.
 
 ## Prerequisites
 
@@ -82,7 +82,7 @@ apps/
     src/ai_workflow_studio/  # FastAPI package and modular capabilities
     alembic/                 # Database migration environment and revisions
     tests/                   # API and authentication tests
-  web/                       # React + TypeScript + Vite application
+  web/                       # React + TypeScript + Material UI + Vite application
 Docs/Project.md              # Product and architecture context
 docker-compose.yml           # Local PostgreSQL, API, and web stack
 setup.ps1                    # First-time developer setup
