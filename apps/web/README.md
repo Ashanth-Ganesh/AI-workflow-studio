@@ -1,75 +1,44 @@
-# React + TypeScript + Vite
+# AI Workflow Studio web app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the React, TypeScript, and Vite frontend for AI Workflow Studio.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+From the repository root, the recommended way to run the full local stack is:
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```powershell
+.\setup.ps1
+.\run.ps1
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+The web application is then available at `http://localhost:5173`. The Vite
+server proxies `/api` requests to the FastAPI container, so browser code uses
+relative API paths and does not need a separate local API URL configuration.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+To run only the frontend after dependencies have been installed:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```powershell
+cd apps\web
+npm run dev
 ```
+
+The API and database must still be running for sign-in and session requests to
+work. Start those with `docker compose up db api` from the repository root.
+
+## Commands
+
+```powershell
+npm run dev      # Start Vite with hot module replacement
+npm run lint     # Run ESLint
+npm run build    # Type-check and create a production build
+npm run preview  # Serve the production build locally
+```
+
+## Current application surface
+
+- Provider-based sign-in for GitHub, Google, and Microsoft when configured
+- Session-aware authentication state and sign-out
+- A minimal authenticated dashboard placeholder for the future workflow editor
+
+Authentication is cookie-based. The frontend must not store provider tokens,
+application tokens, or cloud credentials in browser storage.
