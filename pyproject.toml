@@ -1,0 +1,19 @@
+[project]
+name = "ai-workflow-studio-api"
+version = "0.1.0"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["apps/api/tests"]
+pythonpath = ["apps/api/src"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC"]
+
+[tool.ruff.lint.per-file-ignores]
+"apps/api/alembic/versions/*.py" = ["E501"]
