@@ -51,6 +51,74 @@ function Start-DockerDesktop {
     throw "Docker Engine was not ready within $DockerTimeoutSeconds seconds. Check Docker Desktop for an error."
 }
 
+function Assert-LocalConfiguration {
+    param([Parameter(Mandatory)][string]$ProjectRoot)
+
+    $environmentPath = Join-Path $ProjectRoot ".env"
+    if (-not (Test-Path -LiteralPath $environmentPath)) {
+        throw "Missing .env. Run .\setup.ps1 first, add OAuth credentials to .env, then rerun .\run.ps1."
+    }
+
+    $environmentContents = Get-Content -LiteralPath $environmentPath -Raw
+    $secretMatch = [regex]::Match($environmentContents, "(?m)^\s*SESSION_SECRET\s*=\s*(?<value>.*)$")
+    $sessionSecret = if ($secretMatch.Success) { $secretMatch.Groups["value"].Value.Trim() } else { "" }
+    if (-not $sessionSecret -or $sessionSecret -like "replace-with-*") {
+        throw "SESSION_SECRET is missing or still uses the example value. Run .\setup.ps1 to generate one, or set a unique value in .env."
+    }
+}
+
+function Assert-DockerComposeCapability {
+    $composeVersion = (& docker compose version --short 2>$null).Trim()
+    if ($LASTEXITCODE -ne 0 -or -not $composeVersion) {
+        throw "Docker Compose v2 was not found. Update Docker Desktop, then run 'docker compose version' to confirm it is available."
+    }
+
+    $upHelp = (& docker compose up --help 2>&1 | Out-String)
+    if ($LASTEXITCODE -ne 0 -or $upHelp -notmatch "(?m)^\s*--wait\b") {
+        throw "Docker Compose $composeVersion does not support 'docker compose up --wait'. Update Docker Desktop, then rerun .\run.ps1."
+    }
+
+    Write-Host "Docker Compose $composeVersion is compatible."
+}
+
+function Assert-LocalPortsAvailable {
+    $ports = @(
+        @{ Number = 5173; Service = "web" },
+        @{ Number = 8000; Service = "api" },
+        @{ Number = 5432; Service = "db" }
+    )
+    $runningServices = @(
+        & docker compose ps --status running --services 2>$null |
+            Where-Object { $_ -and $_.Trim() }
+    )
+    if ($LASTEXITCODE -ne 0) {
+        $runningServices = @()
+    }
+
+    foreach ($port in $ports) {
+        if ($runningServices -contains $port.Service) {
+            continue
+        }
+
+        $listeners = @(Get-NetTCPConnection -State Listen -LocalPort $port.Number -ErrorAction SilentlyContinue)
+        if ($listeners.Count -eq 0) {
+            continue
+        }
+
+        $owners = foreach ($listener in $listeners) {
+            try {
+                $process = Get-Process -Id $listener.OwningProcess -ErrorAction Stop
+                "$($process.ProcessName) (PID $($listener.OwningProcess))"
+            }
+            catch {
+                "PID $($listener.OwningProcess)"
+            }
+        }
+        $ownerSummary = ($owners | Sort-Object -Unique) -join ", "
+        throw "Port $($port.Number) is already in use by $ownerSummary. Stop that process or container before starting the $($port.Service) service."
+    }
+}
+
 function Wait-ForHttpEndpoint {
     param(
         [Parameter(Mandatory)]
@@ -99,7 +167,6 @@ if (-not (Get-Command docker -ErrorAction SilentlyContinue)) {
 }
 
 $projectRoot = $PSScriptRoot
-Start-DockerDesktop
 
 $composeArguments = @(
     "compose",
@@ -115,6 +182,11 @@ if (-not $NoBuild) {
 Push-Location $projectRoot
 $exitCode = 0
 try {
+    Assert-LocalConfiguration -ProjectRoot $projectRoot
+    Assert-DockerComposeCapability
+    Start-DockerDesktop
+    Assert-LocalPortsAvailable
+
     & docker @composeArguments
     if ($LASTEXITCODE -ne 0) {
         $exitCode = $LASTEXITCODE
