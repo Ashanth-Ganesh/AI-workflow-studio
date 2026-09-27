@@ -62,8 +62,8 @@ function Assert-LocalConfiguration {
     $environmentContents = Get-Content -LiteralPath $environmentPath -Raw
     $secretMatch = [regex]::Match($environmentContents, "(?m)^\s*SESSION_SECRET\s*=\s*(?<value>.*)$")
     $sessionSecret = if ($secretMatch.Success) { $secretMatch.Groups["value"].Value.Trim() } else { "" }
-    if (-not $sessionSecret -or $sessionSecret -like "replace-with-*") {
-        throw "SESSION_SECRET is missing or still uses the example value. Run .\setup.ps1 to generate one, or set a unique value in .env."
+    if (-not $sessionSecret -or $sessionSecret -like "replace-with-*" -or $sessionSecret.Length -lt 32) {
+        throw "SESSION_SECRET is missing, shorter than 32 characters, or still uses the example value. Run .\setup.ps1 to generate one, or set a unique value in .env."
     }
 }
 
