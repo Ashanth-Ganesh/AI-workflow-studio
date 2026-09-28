@@ -19,9 +19,9 @@ services:
     build:
       context: .
       dockerfile: apps/api/Dockerfile
-    env_file:
-      - path: .env
-        required: false
+    # Keep this broadly compatible with Docker Compose versions used by collaborators.
+    # setup.ps1 creates .env from .env.example before the stack is launched.
+    env_file: .env
     environment:
       DATABASE_URL: postgresql+asyncpg://ai_studio:ai_studio@db:5432/ai_studio
       APP_URL: http://localhost:5173

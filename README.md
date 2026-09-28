@@ -7,8 +7,8 @@ AI Workflow Studio is a cloud-agnostic visual platform for designing and testing
 The local launcher is a PowerShell script and requires:
 
 - Windows PowerShell or PowerShell 7
-- Python 3.13 (the API supports Python 3.12+, but `setup.ps1` currently creates its environment with Python 3.13)
-- Node.js 24 or a compatible current Node.js LTS release, including npm
+- Python 3.13
+- Node.js 20.19+ or 22.12+ (Node.js 24 is recommended), including npm
 - Docker Desktop (the WSL 2 backend is recommended on Windows)
 
 `setup.ps1 -InstallDocker` can install Docker Desktop through Winget when it is
@@ -16,7 +16,7 @@ not already installed. Docker Desktop must be opened once to accept its terms.
 
 ## Run locally
 
-1. Run the first-time setup script. It creates or reuses `.venv`, installs Python and frontend dependencies, and creates `.env` from `.env.example` without overwriting an existing `.env`:
+1. Run the first-time setup script. It validates the Python and Node.js versions, creates or reuses `.venv`, installs Python and frontend dependencies, and creates `.env` from `.env.example` without overwriting an existing `.env`. It also reports which OAuth providers are configured without showing credential values:
 
    ```powershell
    .\setup.ps1
@@ -33,7 +33,7 @@ not already installed. Docker Desktop must be opened once to accept its terms.
 
 4. Open `http://localhost:5173`. Local API documentation is at `http://localhost:8000/api/docs`.
 
-The API container waits for PostgreSQL, applies the committed Alembic migrations, and then starts FastAPI. The Vite development server proxies `/api` requests to FastAPI. The launcher waits for the services, checks the local UI/API, prints recent startup logs, and then displays the local URLs. It follows only new logs afterward; press `Ctrl+C` to stop the Compose services. Docker Desktop itself remains available for other projects and can be quit when you are done working.
+The API container waits for PostgreSQL, applies the committed Alembic migrations, and then starts FastAPI. The Vite development server proxies `/api` requests to FastAPI. Before starting, the launcher validates `.env` and `SESSION_SECRET`, confirms the installed Docker Compose supports `up --wait`, and detects ports already claimed by another process. It then waits for the services, checks the local UI/API, prints recent startup logs, and displays the local URLs. It follows only new logs afterward; press `Ctrl+C` to stop the Compose services. Docker Desktop itself remains available for other projects and can be quit when you are done working.
 
 Use `.\run.ps1 -Detach` to run the stack in the background, or `.\run.ps1 -NoBuild` to skip rebuilding images when the Dockerfiles and dependency files have not changed.
 
