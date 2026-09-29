@@ -1,4 +1,5 @@
 import uuid
+from collections.abc import Callable
 from datetime import timedelta
 from unittest.mock import AsyncMock, Mock
 
@@ -18,8 +19,10 @@ class ScalarResult:
         return self.value
 
 
-async def test_callback_creates_internal_user_identity_and_hashed_session() -> None:
-    settings = Settings()
+async def test_callback_creates_internal_user_identity_and_hashed_session(
+    settings_factory: Callable[..., Settings],
+) -> None:
+    settings = settings_factory()
     state = "state-token"
     browser_token = "browser-token"
     attempt = OAuthAttempt(

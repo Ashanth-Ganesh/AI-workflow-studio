@@ -1,11 +1,14 @@
+from collections.abc import Callable
 from urllib.parse import parse_qs, urlparse
 
 from ai_workflow_studio.core.config import Settings
 from ai_workflow_studio.modules.auth.providers import OAuthProviderRegistry
 
 
-def test_provider_authorization_url_uses_minimal_identity_scopes_and_pkce() -> None:
-    settings = Settings(
+def test_provider_authorization_url_uses_minimal_identity_scopes_and_pkce(
+    settings_factory: Callable[..., Settings],
+) -> None:
+    settings = settings_factory(
         github_client_id="github-id",
         github_client_secret="github-secret",
     )
@@ -24,8 +27,10 @@ def test_provider_authorization_url_uses_minimal_identity_scopes_and_pkce() -> N
     assert query["code_challenge_method"] == ["S256"]
 
 
-def test_provider_availability_reflects_complete_credentials() -> None:
-    settings = Settings(google_client_id="id-without-secret")
+def test_provider_availability_reflects_complete_credentials(
+    settings_factory: Callable[..., Settings],
+) -> None:
+    settings = settings_factory(google_client_id="id-without-secret")
 
     assert OAuthProviderRegistry(settings).availability() == {
         "github": False,
