@@ -2,6 +2,9 @@
 
 This is the React, TypeScript, Material UI, and Vite frontend for AI Workflow Studio.
 
+Use the theme button on the sign-in page or dashboard to switch between light
+and dark mode. The choice is saved in the browser.
+
 ## Local development
 
 From the repository root, the recommended way to run the full local stack is:
@@ -30,6 +33,7 @@ work. Start those with `docker compose up db api` from the repository root.
 ```powershell
 npm run dev      # Start Vite with hot module replacement
 npm run lint     # Run ESLint
+npm test         # Run frontend unit tests
 npm run build    # Type-check and create a production build
 npm run preview  # Serve the production build locally
 ```

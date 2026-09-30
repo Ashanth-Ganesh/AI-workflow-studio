@@ -102,6 +102,7 @@ execution, workspaces, and provider connections remain planned capabilities.
 
 # Frontend (from apps/web)
 npm run lint
+npm test
 npm run build
 ```
 
@@ -110,6 +111,6 @@ npm run build
 GitHub Actions runs the checks in `.github/workflows/ci.yml` on every push and
 pull request. Once the workflow is on `main`, you can also start a run from the
 repository's **Actions** tab.
-The workflow runs API lint and tests, frontend lint and build, and Alembic
-migrations against a temporary PostgreSQL 17 database. No OAuth credentials or
-local `.env` file are needed.
+The workflow runs API lint and tests, frontend lint, unit tests, and build,
+plus Alembic migrations against a temporary PostgreSQL 17 database. No OAuth
+credentials or local `.env` file are needed.
