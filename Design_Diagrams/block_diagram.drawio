@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram name="Block diagram" id="Block-diagram">
+    <mxGraphModel dx="1400" dy="850" grid="1" gridSize="10" page="1" pageWidth="1400" pageHeight="850">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="AI Workflow Studio — Design D0 | Block diagram" style="text;html=0;align=left;verticalAlign=middle;fontSize=26;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="25" y="13" width="1355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="goal" value="Goal: Visually compose reusable AI nodes, run workflows across providers, and inspect their results." style="text;html=0;align=left;verticalAlign=middle;fontSize=19;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="25" y="44" width="1355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="Legend: solid blue box = team-built component/stage; dashed amber box = external system." style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="25" y="76" width="1355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend2" value="Arrows show request/data direction; replies return over the same interface. Labels identify data or interface IDs." style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="25" y="101" width="1355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" value="C1 Visual workspace&#10;Compose / inspect" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#1d4ed8;strokeWidth=2;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="25" y="355" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="C2 Access service&#10;Identity / permissions" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#1d4ed8;strokeWidth=2;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="350" y="175" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="C3 Workflow service&#10;Workflow lifecycle" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#1d4ed8;strokeWidth=2;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="350" y="355" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="C4 Execution coordinator&#10;Run lifecycle" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#1d4ed8;strokeWidth=2;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="690" y="355" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" value="C5 Node runtime&#10;Typed node operations" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#1d4ed8;strokeWidth=2;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="690" y="545" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" value="C6 Provider gateway&#10;Provider integration" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#1d4ed8;strokeWidth=2;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="545" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" value="C7 Application data store&#10;Owned records / persistence schema" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#1d4ed8;strokeWidth=2;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="350" y="660" width="590" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="E1 Identity providers&#10;GitHub / Google / Microsoft" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff7ed;strokeColor=#9a3412;strokeWidth=2;fontSize=19;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="175" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="E2 AI / external services&#10;Azure / AWS / GCP / OpenAI&#10;Local models / REST" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff7ed;strokeColor=#9a3412;strokeWidth=2;fontSize=19;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="355" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=0.5;exitY=0.0;entryX=0.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="c1" target="c2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="355" as="sourcePoint" />
+            <mxPoint x="350" y="215" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="150" y="215" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label0" value="I1 Login / session" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="155" y="263" width="1225" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=1.0;exitY=0.5;entryX=0.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="c2" target="e1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="215" as="sourcePoint" />
+            <mxPoint x="1060" y="215" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label1" value="I2 Identity exchange" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="710" y="183" width="670" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=0.1;exitY=1.0;entryX=0.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="c2" target="c7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="375" y="255" as="sourcePoint" />
+            <mxPoint x="350" y="695" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="315" y="255" />
+              <mxPoint x="315" y="695" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label2" value="I3 Identity records" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="320" y="618" width="1060" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=1.0;exitY=0.5;entryX=0.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="c1" target="c3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="275" y="400" as="sourcePoint" />
+            <mxPoint x="350" y="400" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label3" value="I4" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="300" y="363" width="1080" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=0.5;exitY=0.0;entryX=0.5;entryY=1.0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="c3" target="c2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="475" y="355" as="sourcePoint" />
+            <mxPoint x="475" y="255" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label4" value="I5 Access check" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="480" y="288" width="900" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=0.5;exitY=1.0;entryX=0.211864406779661;entryY=0.0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="c3" target="c7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="475" y="445" as="sourcePoint" />
+            <mxPoint x="475" y="660" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label5" value="I6 Workflow records" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="480" y="583" width="900" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=1.0;exitY=0.5;entryX=0.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="c3" target="c4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="400" as="sourcePoint" />
+            <mxPoint x="690" y="400" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label6" value="I7" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="630" y="363" width="750" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=0.5;exitY=1.0;entryX=0.5;entryY=0.0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="c4" target="c5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="815" y="445" as="sourcePoint" />
+            <mxPoint x="815" y="545" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label7" value="I8 Node invocation" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="820" y="473" width="560" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=1.0;exitY=0.5;entryX=0.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="c5" target="c6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="940" y="585" as="sourcePoint" />
+            <mxPoint x="1060" y="585" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label8" value="I9" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="985" y="550" width="395" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=0.5;exitY=0.0;entryX=0.5;entryY=1.0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="c6" target="e2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1205" y="545" as="sourcePoint" />
+            <mxPoint x="1205" y="445" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label9" value="I10 Service call" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="473" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge10" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=0.5;exitY=1.0;entryX=1.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="c6" target="c7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1205" y="625" as="sourcePoint" />
+            <mxPoint x="940" y="695" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1205" y="695" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label10" value="I11 Connection records" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="661" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge11" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=0.06;exitY=1.0;entryX=0.5084745762711864;entryY=0.0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="c4" target="c7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="705" y="445" as="sourcePoint" />
+            <mxPoint x="650" y="660" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="650" y="445" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label11" value="I12 Execution records" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="655" y="618" width="725" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge12" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=0.9;exitY=1.0;entryX=0.10344827586206896;entryY=0.0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="c3" target="c6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="575" y="445" as="sourcePoint" />
+            <mxPoint x="1090" y="545" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="575" y="515" />
+              <mxPoint x="1090" y="515" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label12" value="I13 Connection setup" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="580" y="483" width="800" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note0" value="C2–C6 are logical modules in one backend deployment, not independently deployed services." style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="25" y="750" width="1355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="C7 is the team-owned data model; its database infrastructure may be local or managed. E1/E2 are outside team control." style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="25" y="775" width="1355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" value="Scope: US2 requires placeholder workflow CRUD; C4–C6 describe the later execution target from Project.md." style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="25" y="800" width="1355" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 850" role="img" aria-labelledby="title desc">
+<title id="title">AI Workflow Studio — Design D0 / Data flow — workflow</title><desc id="desc">Goal: Visually compose reusable AI nodes, run workflows across providers, and inspect their results.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/></marker></defs>
+<rect width="1400" height="850" fill="white"/>
+<text x="25" y="35" font-family="Arial,sans-serif" font-size="26" fill="#0f172a">AI Workflow Studio — Design D0 | Data flow — workflow</text>
+<text x="25" y="66" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Goal: Visually compose reusable AI nodes, run workflows across providers, and inspect their results.</text>
+<text x="25" y="98" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">Legend: solid blue box = team-built component/stage; dashed amber box = external system.</text>
+<text x="25" y="123" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">Arrows show request/data direction; replies return over the same interface. Labels identify data or interface IDs.</text>
+<rect x="30" y="175" width="270" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="165.0" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C1 Visual workspace</text>
+<text x="165.0" y="227" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Graph + text input</text>
+<rect x="540" y="175" width="330" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="705.0" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C3 Workflow service</text>
+<text x="705.0" y="227" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Authorize / validate / save</text>
+<rect x="1080" y="175" width="285" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="1222.5" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C2 Access service</text>
+<text x="1222.5" y="227" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Check scoped permission</text>
+<rect x="30" y="395" width="330" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="195.0" y="422" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C4 Execution coordinator</text>
+<text x="195.0" y="447" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Accepted run / snapshot</text>
+<rect x="540" y="395" width="330" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="705.0" y="422" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C5 Node runtime</text>
+<text x="705.0" y="447" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Typed node input</text>
+<rect x="1080" y="395" width="285" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="1222.5" y="422" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C6 Provider gateway</text>
+<text x="1222.5" y="447" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Scoped provider request</text>
+<rect x="1080" y="620" width="285" height="90" rx="8" fill="#fff7ed" stroke="#9a3412" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="1222.5" y="647" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">E2 AI / external service</text>
+<text x="1222.5" y="672" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Provider output</text>
+<rect x="540" y="620" width="330" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="705.0" y="647" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C7 Application data store</text>
+<text x="705.0" y="672" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Stored records</text>
+<rect x="30" y="620" width="330" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="195.0" y="647" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C1 Visual workspace</text>
+<text x="195.0" y="672" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Results / status / errors</text>
+<polyline points="300,220 540,220" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="313" y="146" width="218.70000000000002" height="25" rx="3" fill="white"/>
+<text x="320" y="165" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I4 graph + input (JSON)</text>
+<text x="320" y="165" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I4 graph + input (JSON)</text>
+<polyline points="870,220 1080,220" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="903" y="146" width="334.40000000000003" height="25" rx="3" fill="white"/>
+<text x="910" y="165" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I5 session + resource/action (typed)</text>
+<text x="910" y="165" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I5 session + resource/action (typed)</text>
+<polyline points="555,265 555,315 195,315 195,395" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="28" y="281" width="325.5" height="25" rx="3" fill="white"/>
+<text x="35" y="300" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I7 authorized graph + input (typed)</text>
+<text x="35" y="300" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I7 authorized graph + input (typed)</text>
+<polyline points="360,440 540,440" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="368" y="366" width="281.0" height="25" rx="3" fill="white"/>
+<text x="375" y="385" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I8 node config + input (typed)</text>
+<text x="375" y="385" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I8 node config + input (typed)</text>
+<polyline points="870,440 1080,440" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="878" y="366" width="343.3" height="25" rx="3" fill="white"/>
+<text x="885" y="385" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I9 capability + connection ID (typed)</text>
+<text x="885" y="385" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I9 capability + connection ID (typed)</text>
+<polyline points="1220,485 1220,620" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1023" y="546" width="334.40000000000003" height="25" rx="3" fill="white"/>
+<text x="1030" y="565" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I10 provider request / result (JSON)</text>
+<text x="1030" y="565" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I10 provider request / result (JSON)</text>
+<polyline points="780,265 780,340 970,340 970,600 800,600 800,620" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="818" y="311" width="209.8" height="25" rx="3" fill="white"/>
+<text x="825" y="330" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I6 graph (JSON record)</text>
+<text x="825" y="330" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I6 graph (JSON record)</text>
+<polyline points="350,485 350,565 660,565 660,620" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="358" y="531" width="361.1" height="25" rx="3" fill="white"/>
+<text x="365" y="550" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I12 status + node results (rows / JSON)</text>
+<text x="365" y="550" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I12 status + node results (rows / JSON)</text>
+<polyline points="1080,470 1025,470 1025,680 870,680" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="868" y="711" width="272.1" height="25" rx="3" fill="white"/>
+<text x="875" y="730" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I11 connection metadata (row)</text>
+<text x="875" y="730" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I11 connection metadata (row)</text>
+<polyline points="540,665 360,665" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="28" y="726" width="343.3" height="25" rx="3" fill="white"/>
+<text x="35" y="745" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I12 → I7 → I4 results / errors (JSON)</text>
+<text x="35" y="745" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I12 → I7 → I4 results / errors (JSON)</text>
+<polyline points="855,265 855,295 1345,295 1345,395" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="968" y="264" width="325.5" height="25" rx="3" fill="white"/>
+<text x="975" y="283" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I13 connection registration (typed)</text>
+<text x="975" y="283" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I13 connection registration (typed)</text>
+<text x="25" y="772" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">Replies: E2 → C6 → C5 → C4 over I10/I9/I8; C4 → C3 → C1 over I7/I4. C7 replies return to the requesting module.</text>
+<text x="25" y="797" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">Invalid graph → I4 field errors; denied access → I5 denial / I4 403; provider failure → normalized node error / stored failed run.</text>
+<text x="25" y="822" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">This is the future execution flow. US2 currently requires placeholder CRUD; User_stories.md sets no numerical SLA.</text>
+</svg>

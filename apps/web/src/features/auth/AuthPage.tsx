@@ -13,12 +13,16 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
+import type { PaletteMode } from '@mui/material/styles'
+import { ColorModeToggle } from '../../components/ColorModeToggle'
 import type { ProviderAvailability, ProviderName } from '../../lib/api'
 
 type AuthPageProps = {
   providers: ProviderAvailability | null
   error: string | null
   onContinue: (provider: ProviderName) => void
+  colorMode: PaletteMode
+  onToggleColorMode: () => void
 }
 
 const providerLabels: Record<ProviderName, string> = {
@@ -29,7 +33,13 @@ const providerLabels: Record<ProviderName, string> = {
 
 const providers: ProviderName[] = ['google', 'github', 'microsoft']
 
-export function AuthPage({ providers: availability, error, onContinue }: AuthPageProps) {
+export function AuthPage({
+  providers: availability,
+  error,
+  onContinue,
+  colorMode,
+  onToggleColorMode,
+}: AuthPageProps) {
   const configuredCount = availability
     ? Object.values(availability).filter(Boolean).length
     : null
@@ -75,6 +85,9 @@ export function AuthPage({ providers: availability, error, onContinue }: AuthPag
       </Box>
 
       <Box component="section" className="auth-panel" aria-labelledby="auth-title">
+        <Box className="auth-theme-toggle">
+          <ColorModeToggle mode={colorMode} onToggle={onToggleColorMode} />
+        </Box>
         <Card className="auth-card" elevation={0} sx={{ backgroundColor: 'transparent' }}>
           <CardContent sx={{ p: 0, '&:last-child': { pb: 0 } }}>
             <Stack className="mobile-brand" direction="row">
@@ -106,9 +119,9 @@ export function AuthPage({ providers: availability, error, onContinue }: AuthPag
                     variant="outlined"
                     sx={{
                       justifyContent: 'space-between',
-                      borderColor: 'rgba(24, 34, 37, 0.16)',
+                      borderColor: 'divider',
                       color: 'text.primary',
-                      '&:hover': { borderColor: 'primary.main', backgroundColor: 'rgba(40, 112, 93, 0.04)' },
+                      '&:hover': { borderColor: 'primary.main', backgroundColor: 'action.hover' },
                     }}
                   >
                     {providerLabels[provider]}

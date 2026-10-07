@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap');
 
 :root {
+  color-scheme: light;
   font-family: 'DM Sans', system-ui, sans-serif;
-  color: #182225;
-  background: #f7f8f5;
+  color: var(--ink);
+  background: var(--page-bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -13,6 +14,32 @@
   --mint: #b9f3d8;
   --coral: #fa8b70;
   --violet: #7d6bf2;
+  --page-bg: #f7f8f5;
+  --panel-bg: #fbfcf9;
+  --story-bg: #173c37;
+  --story-ink: #f3f8f4;
+  --story-muted: #bed0ca;
+  --story-footnote: #78948c;
+  --brand-ink: #173c37;
+  --brand-mark: #3a806b;
+  --legal: #9aa19f;
+  --security: #98a09d;
+}
+
+:root[data-color-mode='dark'] {
+  color-scheme: dark;
+  --ink: #eef6f1;
+  --muted: #afc1b9;
+  --page-bg: #10191a;
+  --panel-bg: #152223;
+  --story-bg: #0c2826;
+  --story-ink: #ecf7f0;
+  --story-muted: #b3cec3;
+  --story-footnote: #94aea4;
+  --brand-ink: #edf5f0;
+  --brand-mark: #89d9b4;
+  --legal: #a5b8ae;
+  --security: #afc1b9;
 }
 
 * { box-sizing: border-box; }

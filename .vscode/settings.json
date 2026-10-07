@@ -1,6 +1,12 @@
 {
   "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
   "python.terminal.activateEnvironment": true,
+  "python.terminal.useEnvFile": true,
+  "python.analysis.extraPaths": ["./apps/api/src"],
+  "files.eol": "\r\n",
+  "[shellscript]": {
+    "files.eol": "\n"
+  },
   "chatgpt.openOnStartup": true,
   "codeQL.githubDatabase.download": "never"
 }

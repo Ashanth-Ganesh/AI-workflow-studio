@@ -2,6 +2,9 @@
 
 This is the React, TypeScript, Material UI, and Vite frontend for AI Workflow Studio.
 
+Use the theme button on the sign-in page or dashboard to switch between light
+and dark mode. The choice is saved in the browser.
+
 ## Local development
 
 From the repository root, the recommended way to run the full local stack is:
@@ -10,6 +13,10 @@ From the repository root, the recommended way to run the full local stack is:
 .\setup.ps1
 .\run.ps1
 ```
+
+On macOS or Linux, run `bash setup.sh` and `bash run.sh` instead. On a new
+macOS or Ubuntu/Debian machine, use `bash setup.sh --install-prerequisites`
+to install missing tools; see the [root README](../../README.md) for details.
 
 The web application is then available at `http://localhost:5173`. The Vite
 server proxies `/api` requests to the FastAPI container, so browser code uses
@@ -30,6 +37,7 @@ work. Start those with `docker compose up db api` from the repository root.
 ```powershell
 npm run dev      # Start Vite with hot module replacement
 npm run lint     # Run ESLint
+npm test         # Run frontend unit tests
 npm run build    # Type-check and create a production build
 npm run preview  # Serve the production build locally
 ```

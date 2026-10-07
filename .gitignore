@@ -14,7 +14,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+/lib/
 lib64/
 parts/
 sdist/
@@ -415,3 +415,6 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+
+./Design_Diagrams

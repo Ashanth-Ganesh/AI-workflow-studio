@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 850" role="img" aria-labelledby="title desc">
+<title id="title">AI Workflow Studio — Design D0 / Data flow — access</title><desc id="desc">Goal: Visually compose reusable AI nodes, run workflows across providers, and inspect their results.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/></marker></defs>
+<rect width="1400" height="850" fill="white"/>
+<text x="25" y="35" font-family="Arial,sans-serif" font-size="26" fill="#0f172a">AI Workflow Studio — Design D0 | Data flow — access</text>
+<text x="25" y="66" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Goal: Visually compose reusable AI nodes, run workflows across providers, and inspect their results.</text>
+<text x="25" y="98" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">Legend: solid blue box = team-built component/stage; dashed amber box = external system.</text>
+<text x="25" y="123" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">Arrows show request/data direction; replies return over the same interface. Labels identify data or interface IDs.</text>
+<rect x="30" y="210" width="280" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="170.0" y="237" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C1 Visual workspace</text>
+<text x="170.0" y="262" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Choose sign-in provider</text>
+<rect x="480" y="210" width="330" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="645.0" y="237" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C2 Access service</text>
+<text x="645.0" y="262" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Start identity verification</text>
+<rect x="1020" y="210" width="330" height="90" rx="8" fill="#fff7ed" stroke="#9a3412" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="1185.0" y="237" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">E1 Identity provider</text>
+<text x="1185.0" y="262" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Verify human identity</text>
+<rect x="1020" y="465" width="330" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="1185.0" y="492" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C2 Access service</text>
+<text x="1185.0" y="517" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Resolve application identity</text>
+<rect x="480" y="465" width="330" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="645.0" y="492" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C7 Application data store</text>
+<text x="645.0" y="517" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Persist identity / session</text>
+<rect x="30" y="465" width="280" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="170.0" y="492" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C1 Visual workspace</text>
+<text x="170.0" y="517" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Show signed-in workspace</text>
+<polyline points="310,255 480,255" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="313" y="181" width="316.6" height="25" rx="3" fill="white"/>
+<text x="320" y="200" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I1 provider:string; return_to:path</text>
+<text x="320" y="200" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I1 provider:string; return_to:path</text>
+<polyline points="810,255 1020,255" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="843" y="156" width="334.40000000000003" height="25" rx="3" fill="white"/>
+<text x="850" y="175" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I2 authorization URL + state (query)</text>
+<text x="850" y="175" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I2 authorization URL + state (query)</text>
+<polyline points="1185,300 1185,465" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="973" y="366" width="361.1" height="25" rx="3" fill="white"/>
+<text x="980" y="385" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I2 code + state (query); profile (JSON)</text>
+<text x="980" y="385" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I2 code + state (query); profile (JSON)</text>
+<polyline points="1020,510 810,510" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="808" y="436" width="370.0" height="25" rx="3" fill="white"/>
+<text x="815" y="455" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I3 user identity + session digest (rows)</text>
+<text x="815" y="455" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I3 user identity + session digest (rows)</text>
+<polyline points="480,510 310,510" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="28" y="591" width="432.3" height="25" rx="3" fill="white"/>
+<text x="35" y="610" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I3 stored user/session → I1 cookies + User JSON</text>
+<text x="35" y="610" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I3 stored user/session → I1 cookies + User JSON</text>
+<polyline points="160,465 160,365 645,365 645,300" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="213" y="331" width="378.90000000000003" height="25" rx="3" fill="white"/>
+<text x="220" y="350" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I1 session cookie (HTTP); User JSON reply</text>
+<text x="220" y="350" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I1 session cookie (HTTP); User JSON reply</text>
+<text x="25" y="772" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">Stages may repeat a component. OAuth browser redirects are mediated by C1 through I1; provider exchanges belong to I2.</text>
+<text x="25" y="797" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I3 acknowledgments return to C2 before C2 issues I1 cookies. Session cookies are opaque; provider secrets stay server-side.</text>
+<text x="25" y="822" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">Existing authentication limits: OAuth attempt 10 minutes; application session 7 days. These are lifetimes, not response SLAs.</text>
+</svg>
