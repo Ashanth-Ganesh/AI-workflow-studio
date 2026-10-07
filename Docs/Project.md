@@ -23,8 +23,8 @@ workflow editor or a deployed service. The implemented stack consists of:
 - PostgreSQL 17 in Docker Compose, managed through Alembic migrations
 - GitHub, Google, and Microsoft OAuth/OIDC login with authorization-code flow,
   PKCE, server-side sessions, and CSRF protection
-- Root-level `setup.ps1` and `run.ps1` scripts for reproducible Windows local
-  development
+- Root-level `setup.ps1`/`run.ps1` and `setup.sh`/`run.sh` scripts for
+  reproducible Windows and macOS/Linux local development
 
 Only the `auth` and `health` API modules exist today. Workflow definitions,
 the visual editor, workspaces, execution, node SDKs, cloud connections, hosted
@@ -378,11 +378,14 @@ Current recommended command:
 .\run.ps1
 ```
 
-`run.ps1` starts Docker Desktop when required, runs `docker compose up --wait`,
-checks the UI and API health endpoint, and follows service logs. `Ctrl+C` stops
-the Compose services but does not remove the database volume or close Docker
-Desktop. Use `docker compose up` directly only when you want to bypass the
-launcher.
+On macOS or Linux, use `bash run.sh` instead. First-time setup is
+`.\setup.ps1` on Windows or `bash setup.sh` on macOS/Linux.
+
+The launchers run `docker compose up --wait`, check the UI and API health
+endpoint, and follow service logs. The Windows/macOS launchers start Docker
+Desktop when required; Linux expects a running Docker Engine. `Ctrl+C` stops
+the Compose services but does not remove the database volume or stop Docker.
+Use `docker compose up` directly only when you want to bypass the launcher.
 
 Whether the frontend/backend run inside containers during active
 development may be adjusted for developer experience, but PostgreSQL and
@@ -1166,6 +1169,8 @@ ai-workflow-studio/
 |-- requirements.txt
 |-- setup.ps1
 |-- run.ps1
+|-- setup.sh
+|-- run.sh
 `-- README.md
 ```
 

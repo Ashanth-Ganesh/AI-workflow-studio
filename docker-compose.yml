@@ -20,7 +20,7 @@ services:
       context: .
       dockerfile: apps/api/Dockerfile
     # Keep this broadly compatible with Docker Compose versions used by collaborators.
-    # setup.ps1 creates .env from .env.example before the stack is launched.
+    # setup.ps1 or setup.sh creates .env from .env.example before launch.
     env_file: .env
     environment:
       DATABASE_URL: postgresql+asyncpg://ai_studio:ai_studio@db:5432/ai_studio

@@ -14,6 +14,10 @@ From the repository root, the recommended way to run the full local stack is:
 .\run.ps1
 ```
 
+On macOS or Linux, run `bash setup.sh` and `bash run.sh` instead. On a new
+macOS or Ubuntu/Debian machine, use `bash setup.sh --install-prerequisites`
+to install missing tools; see the [root README](../../README.md) for details.
+
 The web application is then available at `http://localhost:5173`. The Vite
 server proxies `/api` requests to the FastAPI container, so browser code uses
 relative API paths and does not need a separate local API URL configuration.

@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram name="Data flow — access" id="Data-flow-—-access">
+    <mxGraphModel dx="1400" dy="850" grid="1" gridSize="10" page="1" pageWidth="1400" pageHeight="850">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="AI Workflow Studio — Design D0 | Data flow — access" style="text;html=0;align=left;verticalAlign=middle;fontSize=26;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="25" y="13" width="1355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="goal" value="Goal: Visually compose reusable AI nodes, run workflows across providers, and inspect their results." style="text;html=0;align=left;verticalAlign=middle;fontSize=19;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="25" y="44" width="1355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="Legend: solid blue box = team-built component/stage; dashed amber box = external system." style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="25" y="76" width="1355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend2" value="Arrows show request/data direction; replies return over the same interface. Labels identify data or interface IDs." style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="25" y="101" width="1355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="a" value="C1 Visual workspace&#10;Choose sign-in provider" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#1d4ed8;strokeWidth=2;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="30" y="210" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="b" value="C2 Access service&#10;Start identity verification" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#1d4ed8;strokeWidth=2;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="480" y="210" width="330" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c" value="E1 Identity provider&#10;Verify human identity" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff7ed;strokeColor=#9a3412;strokeWidth=2;fontSize=19;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="210" width="330" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="d" value="C2 Access service&#10;Resolve application identity" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#1d4ed8;strokeWidth=2;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="465" width="330" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="e" value="C7 Application data store&#10;Persist identity / session" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#1d4ed8;strokeWidth=2;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="480" y="465" width="330" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f" value="C1 Visual workspace&#10;Show signed-in workspace" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#1d4ed8;strokeWidth=2;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="30" y="465" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=1.0;exitY=0.5;entryX=0.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="a" target="b">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="255" as="sourcePoint" />
+            <mxPoint x="480" y="255" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label0" value="I1 provider:string; return_to:path" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="320" y="178" width="1060" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=1.0;exitY=0.5;entryX=0.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="b" target="c">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="810" y="255" as="sourcePoint" />
+            <mxPoint x="1020" y="255" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label1" value="I2 authorization URL + state (query)" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="850" y="153" width="530" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=0.5;exitY=1.0;entryX=0.5;entryY=0.0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="c" target="d">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1185" y="300" as="sourcePoint" />
+            <mxPoint x="1185" y="465" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label2" value="I2 code + state (query); profile (JSON)" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="980" y="363" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=0.0;exitY=0.5;entryX=1.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="d" target="e">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1020" y="510" as="sourcePoint" />
+            <mxPoint x="810" y="510" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label3" value="I3 user identity + session digest (rows)" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="815" y="433" width="565" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=0.0;exitY=0.5;entryX=1.0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="e" target="f">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="480" y="510" as="sourcePoint" />
+            <mxPoint x="310" y="510" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label4" value="I3 stored user/session → I1 cookies + User JSON" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="35" y="588" width="1345" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" value="" style="edgeStyle=none;html=0;endArrow=block;strokeColor=#334155;strokeWidth=2;exitX=0.4642857142857143;exitY=0.0;entryX=0.5;entryY=1.0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="f" target="b">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="465" as="sourcePoint" />
+            <mxPoint x="645" y="300" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="160" y="365" />
+              <mxPoint x="645" y="365" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-label5" value="I1 session cookie (HTTP); User JSON reply" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="220" y="328" width="1160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note0" value="Stages may repeat a component. OAuth browser redirects are mediated by C1 through I1; provider exchanges belong to I2." style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="25" y="750" width="1355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="I3 acknowledgments return to C2 before C2 issues I1 cookies. Session cookies are opaque; provider secrets stay server-side." style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="25" y="775" width="1355" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" value="Existing authentication limits: OAuth attempt 10 minutes; application session 7 days. These are lifetimes, not response SLAs." style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="25" y="800" width="1355" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

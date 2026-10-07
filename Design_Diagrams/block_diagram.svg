@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 850" role="img" aria-labelledby="title desc">
+<title id="title">AI Workflow Studio — Design D0 / Block diagram</title><desc id="desc">Goal: Visually compose reusable AI nodes, run workflows across providers, and inspect their results.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/></marker></defs>
+<rect width="1400" height="850" fill="white"/>
+<text x="25" y="35" font-family="Arial,sans-serif" font-size="26" fill="#0f172a">AI Workflow Studio — Design D0 | Block diagram</text>
+<text x="25" y="66" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Goal: Visually compose reusable AI nodes, run workflows across providers, and inspect their results.</text>
+<text x="25" y="98" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">Legend: solid blue box = team-built component/stage; dashed amber box = external system.</text>
+<text x="25" y="123" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">Arrows show request/data direction; replies return over the same interface. Labels identify data or interface IDs.</text>
+<rect x="25" y="355" width="250" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="150.0" y="382" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C1 Visual workspace</text>
+<text x="150.0" y="407" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Compose / inspect</text>
+<rect x="350" y="175" width="250" height="80" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="475.0" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C2 Access service</text>
+<text x="475.0" y="227" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Identity / permissions</text>
+<rect x="350" y="355" width="250" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="475.0" y="382" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C3 Workflow service</text>
+<text x="475.0" y="407" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Workflow lifecycle</text>
+<rect x="690" y="355" width="250" height="90" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="815.0" y="382" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C4 Execution coordinator</text>
+<text x="815.0" y="407" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Run lifecycle</text>
+<rect x="690" y="545" width="250" height="80" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="815.0" y="572" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C5 Node runtime</text>
+<text x="815.0" y="597" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Typed node operations</text>
+<rect x="1060" y="545" width="290" height="80" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="1205.0" y="572" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C6 Provider gateway</text>
+<text x="1205.0" y="597" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Provider integration</text>
+<rect x="350" y="660" width="590" height="70" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="645.0" y="687" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">C7 Application data store</text>
+<text x="645.0" y="712" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Owned records / persistence schema</text>
+<rect x="1060" y="175" width="290" height="80" rx="8" fill="#fff7ed" stroke="#9a3412" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="1205.0" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">E1 Identity providers</text>
+<text x="1205.0" y="227" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">GitHub / Google / Microsoft</text>
+<rect x="1060" y="355" width="290" height="90" rx="8" fill="#fff7ed" stroke="#9a3412" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="1205.0" y="382" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">E2 AI / external services</text>
+<text x="1205.0" y="407" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Azure / AWS / GCP / OpenAI</text>
+<text x="1205.0" y="432" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#0f172a">Local models / REST</text>
+<polyline points="150,355 150,215 350,215" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="148" y="266" width="174.20000000000002" height="25" rx="3" fill="white"/>
+<text x="155" y="285" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I1 Login / session</text>
+<text x="155" y="285" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I1 Login / session</text>
+<polyline points="600,215 1060,215" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="703" y="186" width="192.0" height="25" rx="3" fill="white"/>
+<text x="710" y="205" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I2 Identity exchange</text>
+<text x="710" y="205" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I2 Identity exchange</text>
+<polyline points="375,255 315,255 315,695 350,695" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="313" y="621" width="183.1" height="25" rx="3" fill="white"/>
+<text x="320" y="640" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I3 Identity records</text>
+<text x="320" y="640" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I3 Identity records</text>
+<polyline points="275,400 350,400" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="293" y="366" width="31.8" height="25" rx="3" fill="white"/>
+<text x="300" y="385" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I4</text>
+<text x="300" y="385" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I4</text>
+<polyline points="475,355 475,255" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="473" y="291" width="147.5" height="25" rx="3" fill="white"/>
+<text x="480" y="310" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I5 Access check</text>
+<text x="480" y="310" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I5 Access check</text>
+<polyline points="475,445 475,660" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="473" y="586" width="183.1" height="25" rx="3" fill="white"/>
+<text x="480" y="605" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I6 Workflow records</text>
+<text x="480" y="605" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I6 Workflow records</text>
+<polyline points="600,400 690,400" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="623" y="366" width="31.8" height="25" rx="3" fill="white"/>
+<text x="630" y="385" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I7</text>
+<text x="630" y="385" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I7</text>
+<polyline points="815,445 815,545" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="813" y="476" width="174.20000000000002" height="25" rx="3" fill="white"/>
+<text x="820" y="495" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I8 Node invocation</text>
+<text x="820" y="495" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I8 Node invocation</text>
+<polyline points="940,585 1060,585" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="978" y="553" width="31.8" height="25" rx="3" fill="white"/>
+<text x="985" y="572" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I9</text>
+<text x="985" y="572" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I9</text>
+<polyline points="1205,545 1205,445" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1203" y="476" width="156.4" height="25" rx="3" fill="white"/>
+<text x="1210" y="495" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I10 Service call</text>
+<text x="1210" y="495" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I10 Service call</text>
+<polyline points="1205,625 1205,695 940,695" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1013" y="664" width="209.8" height="25" rx="3" fill="white"/>
+<text x="1020" y="683" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I11 Connection records</text>
+<text x="1020" y="683" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I11 Connection records</text>
+<polyline points="705,445 650,445 650,660" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="648" y="621" width="200.9" height="25" rx="3" fill="white"/>
+<text x="655" y="640" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I12 Execution records</text>
+<text x="655" y="640" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I12 Execution records</text>
+<polyline points="575,445 575,515 1090,515 1090,545" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="573" y="486" width="192.0" height="25" rx="3" fill="white"/>
+<text x="580" y="505" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I13 Connection setup</text>
+<text x="580" y="505" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">I13 Connection setup</text>
+<text x="25" y="772" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">C2–C6 are logical modules in one backend deployment, not independently deployed services.</text>
+<text x="25" y="797" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">C7 is the team-owned data model; its database infrastructure may be local or managed. E1/E2 are outside team control.</text>
+<text x="25" y="822" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">Scope: US2 requires placeholder workflow CRUD; C4–C6 describe the later execution target from Project.md.</text>
+</svg>

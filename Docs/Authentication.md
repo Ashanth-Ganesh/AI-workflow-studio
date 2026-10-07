@@ -192,7 +192,7 @@ The initial schema is defined by Alembic revision `20260919_0001`.
 
 ## Configuration
 
-Copy `.env.example` to `.env`; `setup.ps1` does this automatically when no
+Copy `.env.example` to `.env`; `setup.ps1` or `setup.sh` does this automatically when no
 `.env` exists and generates a local `SESSION_SECRET`. Never commit `.env`.
 
 | Variable | Purpose |
